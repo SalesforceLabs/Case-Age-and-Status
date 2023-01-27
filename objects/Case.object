@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>CABH_Indicator__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( CABH__c &lt;= 5, 
+    IMAGE(&quot;/resource/1454338417000/AR_Green_Icon&quot;, &quot;Green&quot;, 30, 30) , 
+   IF(CABH__c &lt;= 10, 
+     IMAGE(&quot;/resource/1454338381000/AR_Yellow_Icon&quot;, &quot;Yellow&quot;, 30, 30), 
+     IMAGE(&quot;/resource/1454338453000/AR_Red_Icon&quot;, &quot;Red&quot;, 30, 30)
+   ) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CABH Indicator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CABH__c</fullName>
+        <externalId>false</externalId>
+        <label>CABH</label>
+        <summarizedField>Case_Status_Change__c.Status_Time__c</summarizedField>
+        <summaryForeignKey>Case_Status_Change__c.Case__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+</CustomObject>
